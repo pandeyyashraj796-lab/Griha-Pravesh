@@ -19,7 +19,19 @@ openBtn.addEventListener("click", () => {
 
         welcome.style.display = "none";
         invitation.style.display = "flex";
+const card = document.querySelector(".scroll-card");
 
+card.style.transform = "scaleY(0)";
+card.style.opacity = "0";
+
+setTimeout(() => {
+
+    card.style.transition = "all 1.2s ease";
+
+    card.style.transform = "scaleY(1)";
+    card.style.opacity = "1";
+
+},100);
         // Smooth Scroll
         invitation.scrollIntoView({
             behavior: "smooth"
@@ -239,3 +251,28 @@ document.getElementById("minutes").innerHTML = minutes;
 document.getElementById("seconds").innerHTML = seconds;
 
 },1000);
+// ======================================
+// Falling Flower Petals
+// ======================================
+
+const petals = document.querySelector(".petals");
+
+for(let i=0;i<30;i++){
+
+const petal=document.createElement("div");
+
+petal.className="petal";
+
+petal.style.left=Math.random()*100+"%";
+
+petal.style.animationDuration=8+Math.random()*8+"s";
+
+petal.style.animationDelay=Math.random()*8+"s";
+
+petal.style.opacity=Math.random();
+
+petal.style.transform=`scale(${0.5+Math.random()})`;
+
+petals.appendChild(petal);
+
+}

@@ -315,7 +315,7 @@ display:none;
 }
 
 .scroll-card{
-
+overflow:hidden;
 max-width:850px;
 
 width:100%;
@@ -439,7 +439,60 @@ margin-bottom:15px;
 color:var(--saffron);
 
 }
+.scroll-card::before{
 
+content:"";
+
+position:absolute;
+
+top:-2px;
+
+left:-2px;
+
+right:-2px;
+
+bottom:-2px;
+
+background:linear-gradient(
+45deg,
+gold,
+orange,
+gold,
+#fff5c3,
+gold
+);
+
+z-index:-1;
+
+background-size:400% 400%;
+
+animation:borderGlow 8s linear infinite;
+
+border-radius:22px;
+
+}
+
+@keyframes borderGlow{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
 /* Responsive */
 
 @media(max-width:768px){
@@ -544,5 +597,383 @@ color:#d97706;
 font-size:15px;
 
 letter-spacing:1px;
+
+}
+/* ===========================
+Flower Petals
+=========================== */
+
+.petals{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+.petal{
+
+position:absolute;
+
+width:18px;
+
+height:18px;
+
+background:linear-gradient(45deg,#ff9ecb,#ff6fa7);
+
+border-radius:70% 0 70% 0;
+
+opacity:.8;
+
+animation:fall linear infinite;
+
+}
+
+@keyframes fall{
+
+0%{
+
+transform:translateY(-10vh) rotate(0deg);
+
+}
+
+100%{
+
+transform:translateY(110vh) rotate(720deg);
+
+}
+
+}
+/* ===========================
+Schedule
+=========================== */
+
+.schedule{
+
+margin-top:60px;
+
+}
+
+.schedule h2{
+
+margin-bottom:25px;
+
+font-family:Cinzel,serif;
+
+color:var(--maroon);
+
+}
+
+.schedule-item{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 22px;
+
+margin:12px 0;
+
+background:#fffaf0;
+
+border-left:5px solid gold;
+
+border-radius:12px;
+
+transition:.3s;
+
+}
+
+.schedule-item:hover{
+
+transform:translateX(8px);
+
+}
+
+.schedule-item span{
+
+font-weight:bold;
+
+color:#D97706;
+
+}
+
+/* Hosted By */
+
+.hosts{
+
+margin-top:60px;
+
+padding:30px;
+
+background:#fff8ea;
+
+border-radius:18px;
+
+}
+
+.hosts h2{
+
+font-family:Cinzel,serif;
+
+margin-bottom:15px;
+
+color:var(--maroon);
+
+}
+
+.hosts h3{
+
+font-family:'Tiro Devanagari Hindi',serif;
+
+font-size:30px;
+
+margin-bottom:15px;
+
+color:#D97706;
+
+}
+
+.hosts p{
+
+line-height:1.8;
+
+}
+/* ===========================
+Sanskrit Shloka
+=========================== */
+
+.shlok-box{
+
+margin:40px 0;
+
+padding:30px;
+
+background:linear-gradient(
+180deg,
+#fffef9,
+#fff7e5
+);
+
+border-radius:20px;
+
+border:2px solid rgba(255,215,0,.35);
+
+box-shadow:0 8px 30px rgba(0,0,0,.08);
+
+}
+
+.shlok-box h3{
+
+font-family:'Tiro Devanagari Hindi',serif;
+
+font-size:32px;
+
+color:#7B241C;
+
+margin-bottom:20px;
+
+}
+
+.shlok{
+
+font-family:'Tiro Devanagari Hindi',serif;
+
+font-size:28px;
+
+line-height:2;
+
+color:#8B4513;
+
+}
+
+.meaning{
+
+margin-top:25px;
+
+font-size:16px;
+
+font-style:italic;
+
+color:#555;
+
+line-height:1.8;
+
+}
+/* Invitation Message */
+
+.invite-box{
+
+margin-top:60px;
+
+padding:35px;
+
+background:white;
+
+border-radius:18px;
+
+border:2px dashed gold;
+
+}
+
+.invite-box h2{
+
+font-family:Cinzel,serif;
+
+margin-bottom:20px;
+
+color:#7B241C;
+
+}
+
+.invite-box p{
+
+font-size:18px;
+
+line-height:2;
+
+}
+.footer{
+
+margin-top:70px;
+
+padding-top:35px;
+
+border-top:2px solid rgba(255,215,0,.4);
+
+}
+
+.footer h2{
+
+font-family:Cinzel,serif;
+
+margin:20px 0;
+
+color:#7B241C;
+
+}
+
+.footer p{
+
+line-height:1.8;
+
+}
+
+.footer h3{
+
+margin-top:30px;
+
+color:#D97706;
+
+}
+/* ===========================
+Royal Scroll Effect
+=========================== */
+
+.scroll-card{
+
+transform-origin:top;
+
+}
+
+/* Decorative Corners */
+
+.scroll-card::after{
+
+content:"❀";
+
+position:absolute;
+
+top:20px;
+
+right:25px;
+
+font-size:40px;
+
+color:rgba(255,215,0,.7);
+
+}
+
+.corner{
+
+position:absolute;
+
+font-size:32px;
+
+color:#d97706;
+
+opacity:.8;
+
+}
+.vedic-line{
+
+font-family:'Tiro Devanagari Hindi',serif;
+
+font-size:22px;
+
+margin:25px 0;
+
+line-height:2;
+
+color:#7B241C;
+
+}
+.bells{
+
+position:fixed;
+
+top:20px;
+
+width:100%;
+
+text-align:center;
+
+font-size:34px;
+
+animation:swingBell 2s ease-in-out infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes swingBell{
+
+0%{
+
+transform:rotate(0deg);
+
+}
+
+25%{
+
+transform:rotate(2deg);
+
+}
+
+50%{
+
+transform:rotate(-2deg);
+
+}
+
+100%{
+
+transform:rotate(0deg);
+
+}
 
 }
