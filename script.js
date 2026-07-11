@@ -47,36 +47,26 @@ setTimeout(() => {
 
 const particleContainer = document.querySelector(".particles");
 
-for (let i = 0; i < 80; i++) {
+if (particleContainer) {
 
-    const star = document.createElement("span");
+    for (let i = 0; i < 80; i++) {
 
-    star.style.position = "absolute";
+        const star = document.createElement("span");
 
-    star.style.width = Math.random() * 5 + "px";
+        star.style.position = "absolute";
+        star.style.width = Math.random() * 5 + "px";
+        star.style.height = star.style.width;
+        star.style.background = "gold";
+        star.style.borderRadius = "50%";
+        star.style.left = Math.random() * 100 + "%";
+        star.style.top = Math.random() * 100 + "%";
+        star.style.opacity = Math.random();
+        star.style.animation = `sparkle ${4 + Math.random() * 5}s infinite alternate`;
 
-    star.style.height = star.style.width;
-
-    star.style.background = "gold";
-
-    star.style.borderRadius = "50%";
-
-    star.style.left = Math.random() * 100 + "%";
-
-    star.style.top = Math.random() * 100 + "%";
-
-    star.style.opacity = Math.random();
-
-    star.style.animation = `
-        sparkle
-        ${4 + Math.random() * 5}s
-        infinite alternate
-    `;
-
-    particleContainer.appendChild(star);
+        particleContainer.appendChild(star);
+    }
 
 }
-
 // ======================================
 // Add Keyframes using JS
 // ======================================
@@ -223,34 +213,37 @@ document.head.appendChild(rippleCSS);
 
 console.log("✨ Griha Pravesh Invitation Loaded Successfully");
 // =============================
-// Countdown
+// Countdown Timer
 // =============================
 
-const eventDate = new Date("August 17, 2026 10:00:00").getTime();
+function updateCountdown(){
+      console.log("Updating countdown...");
+    const eventDate = new Date(2026,7,17,10,0,0).getTime();
+    // Month is zero-based, so 7 = August
 
-setInterval(() => {
+    const now = Date.now();
 
-const now = new Date().getTime();
+    const distance = eventDate - now;
 
-const distance = eventDate - now;
+    if(distance < 0){
+        return;
+    }
 
-const days = Math.floor(distance / (1000*60*60*24));
+    const days = Math.floor(distance/(1000*60*60*24));
+    const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+    const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+    const seconds = Math.floor((distance%(1000*60))/1000);
 
-const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
 
-const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+}
 
-const seconds = Math.floor((distance % (1000*60)) / 1000);
+updateCountdown();
 
-document.getElementById("days").innerHTML = days;
-
-document.getElementById("hours").innerHTML = hours;
-
-document.getElementById("minutes").innerHTML = minutes;
-
-document.getElementById("seconds").innerHTML = seconds;
-
-},1000);
+setInterval(updateCountdown,1000);
 // ======================================
 // Falling Flower Petals
 // ======================================
