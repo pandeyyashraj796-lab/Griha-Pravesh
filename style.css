@@ -697,7 +697,12 @@ border-radius:12px;
 transition:.3s;
 
 }
-
+@media(max-width:768px){
+.schedule-item{
+    flex-direction:column;
+    text-align:center;
+}
+}
 .schedule-item:hover{
 
 transform:translateX(8px);
@@ -1074,4 +1079,149 @@ top:40px;
 
 right:40px;
 
+}
+/* =====================================
+   Mobile Responsive (Portrait)
+===================================== */
+
+@media screen and (max-width:768px){
+
+.scroll-card{
+    width:95%;
+    padding:30px 20px;
+}
+
+.scroll-card h2{
+    font-size:30px;
+    line-height:1.3;
+}
+
+.scroll-card h3{
+    font-size:22px;
+}
+
+.scroll-card p{
+    font-size:16px;
+    line-height:1.8;
+}
+
+.ganesha-top img{
+    width:120px;
+}
+
+.kalash-bottom img{
+    width:90px;
+}
+
+.rangoli img{
+    width:180px;
+}
+
+#countdown{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.time-box{
+    padding:15px;
+}
+
+.time-box span{
+    font-size:28px;
+}
+
+.schedule-item{
+    flex-direction:column;
+    text-align:center;
+    gap:8px;
+}
+
+.details{
+    grid-template-columns:1fr;
+}
+
+.item{
+    width:100%;
+}
+
+.lotus img{
+    width:45px;
+}
+
+.corner{
+    font-size:22px;
+}
+
+}
+@media screen and (max-width:480px){
+
+.om{
+    font-size:38px;
+}
+
+.ganesh{
+    font-size:26px;
+}
+
+.welcome-text{
+    font-size:15px;
+}
+
+#openBtn{
+    padding:12px 28px;
+    font-size:16px;
+}
+
+.scroll-card{
+    padding:20px 15px;
+}
+
+.scroll-card h2{
+    font-size:24px;
+}
+
+.scroll-card h3{
+    font-size:18px;
+}
+
+.scroll-card p{
+    font-size:15px;
+}
+
+.shlok{
+    font-size:18px;
+}
+
+.meaning{
+    font-size:14px;
+}
+
+.ganesha-top img{
+    width:100px;
+}
+
+.kalash-bottom img{
+    width:75px;
+}
+
+.rangoli img{
+    width:150px;
+}
+
+.time-box span{
+    font-size:24px;
+}
+
+}
+img{
+    max-width:100%;
+    height:auto;
+}
+body{
+    overflow-x:hidden;
+}
+
+*{
+    word-wrap:break-word;
 }
