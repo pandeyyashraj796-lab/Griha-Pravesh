@@ -289,3 +289,25 @@ musicBtn.addEventListener("click", () => {
     }
 
 });
+// ================================
+// Background Music Controls
+// ================================
+
+// Pause when user changes tab/app
+document.addEventListener("visibilitychange", () => {
+
+    if (document.hidden) {
+        bgMusic.pause();
+    } else {
+        bgMusic.play().catch(() => {});
+    }
+
+});
+
+// Stop when page is closed
+window.addEventListener("beforeunload", () => {
+
+    bgMusic.pause();
+    bgMusic.currentTime = 0;
+
+});
