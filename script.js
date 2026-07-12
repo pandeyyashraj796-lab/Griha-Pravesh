@@ -7,10 +7,13 @@
 const openBtn = document.getElementById("openBtn");
 const welcome = document.getElementById("welcome");
 const invitation = document.getElementById("invitation");
-
+const backgroundMusic = document.getElementById("background-Music");
+backgroundMusic.volume = 0.75;
 // Open Invitation
 openBtn.addEventListener("click", () => {
-
+backgroundMusic.play().catch(error => {
+    console.log("Music couldn't start:", error);
+});
     // Fade out welcome screen
     welcome.style.transition = "all 1s ease";
     welcome.style.opacity = "0";
@@ -269,3 +272,20 @@ petal.style.transform=`scale(${0.5+Math.random()})`;
 petals.appendChild(petal);
 
 }
+const musicBtn = document.getElementById("musicBtn");
+
+musicBtn.addEventListener("click", () => {
+
+    if(bgMusic.paused){
+
+        bgMusic.play();
+        musicBtn.innerHTML = "🔊";
+
+    }else{
+
+        bgMusic.pause();
+        musicBtn.innerHTML = "🔇";
+
+    }
+
+});
