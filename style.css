@@ -1240,3 +1240,28 @@ body{
     box-shadow:0 10px 20px rgba(0,0,0,.2);
     z-index:999;
 }
+/* Day Heading */
+
+.day-title{
+
+    margin:35px 0 15px;
+
+    padding:12px;
+
+    background:linear-gradient(90deg,#FFD700,#FFF3C4);
+
+    color:#7B241C;
+
+    font-weight:bold;
+
+    font-size:22px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    font-family:Cinzel,serif;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
