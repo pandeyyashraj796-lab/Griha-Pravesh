@@ -1265,3 +1265,146 @@ body{
     box-shadow:0 5px 15px rgba(0,0,0,.08);
 
 }
+/* Venue Box */
+
+.venue-box{
+
+    max-width:600px;
+
+    margin:40px auto;
+
+    padding:30px;
+
+    background:#fffdf8;
+
+    border:2px solid rgba(255,215,0,.5);
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+.venue-box h3{
+
+    color:#7B241C;
+
+    margin-bottom:10px;
+
+    font-size:28px;
+
+}
+
+.venue-box p{
+
+    margin-bottom:20px;
+
+    color:#555;
+
+}
+
+.venue-btn{
+
+    display:inline-block;
+
+    padding:14px 28px;
+
+    background:linear-gradient(45deg,#d97706,#ffd700);
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:40px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.venue-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+
+}
+.scroll-card{
+
+box-shadow:
+0 0 20px rgba(255,215,0,.3),
+0 0 40px rgba(255,215,0,.25),
+0 25px 60px rgba(0,0,0,.2);
+
+transition:.5s;
+
+}
+
+.scroll-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 0 30px rgba(255,215,0,.6),
+0 0 60px rgba(255,215,0,.3);
+
+}
+.corner{
+
+animation:flame 1.5s infinite alternate;
+
+}
+
+@keyframes flame{
+
+0%{
+
+transform:scale(1);
+
+filter:drop-shadow(0 0 2px orange);
+
+}
+
+100%{
+
+transform:scale(1.08);
+
+filter:drop-shadow(0 0 10px gold);
+
+}
+
+}
+.om{
+
+position:fixed;
+
+font-size:35px;
+
+color:rgba(255,165,0,.15);
+
+animation:floatOm 20s linear infinite;
+
+pointer-events:none;
+
+}
+
+.om1{left:10%;}
+
+.om2{left:50%;animation-delay:5s;}
+
+.om3{left:80%;animation-delay:10s;}
+
+@keyframes floatOm{
+
+0%{
+top:100%;
+}
+
+100%{
+top:-100px;
+}
+
+}

@@ -311,3 +311,27 @@ window.addEventListener("beforeunload", () => {
     bgMusic.currentTime = 0;
 
 });
+const shareBtn = document.getElementById("shareBtn");
+
+shareBtn.addEventListener("click", async () => {
+
+    if (navigator.share) {
+
+        try {
+            await navigator.share({
+                title: "Griha Pravesh Invitation",
+                text: "You are cordially invited to our Griha Pravesh & Vastu Shanti Ceremony.",
+                url: window.location.href
+            });
+        } catch (err) {
+            console.log(err);
+        }
+
+    } else {
+
+        navigator.clipboard.writeText(window.location.href);
+        alert("Invitation link copied!");
+
+    }
+
+});
