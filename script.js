@@ -221,7 +221,7 @@ console.log("✨ Griha Pravesh Invitation Loaded Successfully");
 
 function updateCountdown(){
       console.log("Updating countdown...");
-    const eventDate = new Date(2026,7,17,10,0,0).getTime();
+    const eventDate = new Date(2026,7,18,10,0,0).getTime();
     // Month is zero-based, so 7 = August
 
     const now = Date.now();
